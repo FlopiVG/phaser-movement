@@ -1,6 +1,6 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
-import Mushroom from '../sprites/Mushroom'
+import Player from '../sprites/Player'
 
 export default class extends Phaser.State {
   init () {}
@@ -17,19 +17,16 @@ export default class extends Phaser.State {
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
 
-    this.mushroom = new Mushroom({
-      game: this.game,
+    this.player = new Player({
       x: this.world.centerX,
-      y: this.world.centerY,
-      asset: 'mushroom'
+      y: this.world.centerY
     })
 
-    this.game.add.existing(this.mushroom)
   }
 
   render () {
     if (__DEV__) {
-      this.game.debug.spriteInfo(this.mushroom, 32, 32)
+      this.game.debug.spriteInfo(this.player, 32, 32)
     }
   }
 }
