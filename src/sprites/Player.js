@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import { keyDown } from '../utils'
+import StatusBar from './StatusBar'
 
 class Player extends Phaser.Sprite {
   constructor ({ x, y }) {
@@ -15,6 +16,8 @@ class Player extends Phaser.Sprite {
     game.camera.follow(this)
     game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
+
+    this.StatusBar = new StatusBar()
   }
 
   update () {
@@ -22,6 +25,8 @@ class Player extends Phaser.Sprite {
 
     if (this.stamina <= 0) this.recovering = true
     if (this.stamina >= this.maxStamina) this.recovering = false
+
+    this.StatusBar.setValue(this.stamina, this.maxStamina)
   }
 
   controls() {
