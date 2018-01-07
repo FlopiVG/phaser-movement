@@ -17,11 +17,12 @@ export default class extends Phaser.State {
     banner.padding.set(10, 16)
     banner.anchor.setTo(0.5)
 
+    game.physics.startSystem(Phaser.Physics.ARCADE)
     this.player = new Player({
       x: this.world.centerX,
       y: this.world.centerY
     })
-
+    game.world.setBounds(0, 0, this.game.width * 3, this.game.height * 3)
   }
 
   render () {
