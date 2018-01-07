@@ -20,7 +20,7 @@ class StatusBar extends Phaser.Sprite {
 
 class FillStatusBar extends Phaser.Sprite {
   constructor({ x, y, parentWidth }) {
-    super(game, x, y, 'loaderBar')
+    super(game, x, y, 'loaded-stamina')
 
     this.height = 10
     this.width = parentWidth - 6
