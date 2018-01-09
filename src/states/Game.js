@@ -9,7 +9,7 @@ export default class extends Phaser.State {
   preload () {}
 
   create () {
-    game.world.setBounds(0, 0, this.game.width * 3, this.game.height * 3)
+    game.world.setBounds(0, 0, this.game.width * 3, this.game.height)
     game.physics.startSystem(Phaser.Physics.ARCADE)
 
     const bannerText = 'Phaser + ES6 + Webpack'

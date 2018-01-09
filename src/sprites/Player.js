@@ -44,21 +44,21 @@ class Player extends Phaser.Sprite {
   controls() {
     if (keyDown('LEFT')) {
       this.x -= this.speed
-      this.animations.play('walk_left', 10, true)
+      this.animations.play('walk_left', 10)
       this.lastPosition = 'left'
     } else if (keyDown('RIGHT')) {
       this.x += this.speed
-      this.animations.play('walk_right', 10, true)
+      this.animations.play('walk_right', 10)
       this.lastPosition = 'right'
     }
 
     if (keyDown('UP')) {
       this.y -= this.speed
-      this.animations.play('walk_up', 10, true)
+      this.animations.play('walk_up', 10)
       this.lastPosition = 'up'
     } else if (keyDown('DOWN')) {
       this.y += this.speed
-      this.animations.play('walk_down', 10, true)
+      this.animations.play('walk_down', 10)
       this.lastPosition = 'down'
     }
 
