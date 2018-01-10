@@ -9,18 +9,8 @@ export default class extends Phaser.State {
   preload () {}
 
   create () {
-    game.world.setBounds(0, 0, this.game.width * 3, this.game.height)
+    game.add.image(0, 0, 'example-background')
     game.physics.startSystem(Phaser.Physics.ARCADE)
-
-    const bannerText = 'Phaser + ES6 + Webpack'
-    let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText, {
-      font: '40px Bangers',
-      fill: '#77BFA3',
-      smoothed: false
-    })
-
-    banner.padding.set(10, 16)
-    banner.anchor.setTo(0.5)
 
     this.player = new Player({
       game: this.game,
