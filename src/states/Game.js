@@ -12,11 +12,7 @@ export default class extends Phaser.State {
     game.add.image(0, 0, 'example-background')
     game.physics.startSystem(Phaser.Physics.ARCADE)
 
-    this.player = new Player({
-      game: this.game,
-      x: this.world.centerX,
-      y: this.world.centerY
-    })
+    new Player({ x: 100, y: 200 })
   }
 
   render () {
